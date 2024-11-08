@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <StartupObject>FNDice.App</StartupObject>
+    <ApplicationIcon>die.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Bitmaps\About24.gif" />
+    <None Remove="Bitmaps\Help24.gif" />
+    <None Remove="Bitmaps\History24.gif" />
+    <None Remove="Bitmaps\New24.gif" />
+    <None Remove="Bitmaps\Open24.gif" />
+    <None Remove="Bitmaps\Save24.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Bitmaps\About24.gif" />
+    <Resource Include="Bitmaps\Help24.gif" />
+    <Resource Include="Bitmaps\History24.gif" />
+    <Resource Include="Bitmaps\New24.gif" />
+    <Resource Include="Bitmaps\Open24.gif" />
+    <Resource Include="Bitmaps\Save24.gif" />
+    <Resource Include="die.ico" />
+  </ItemGroup>
+
+</Project>

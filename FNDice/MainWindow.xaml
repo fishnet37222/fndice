@@ -1,0 +1,43 @@
+﻿<!--
+Copyright (c) 2024 David A. Frischknecht
+
+SPDX-License-Identifier: Apache-2.0 -->
+
+<Window x:Class="FNDice.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:FNDice"
+		mc:Ignorable="d" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+		Title="FNDice" Height="450" Width="800" Icon="/die.ico">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<ToolBar Grid.Row="0" ToolBarTray.IsLocked="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+			<Button ToolTip="Start a new game.">
+				<local:AutoGreyableImage Source="Bitmaps/New24.gif" />
+			</Button>
+			<Button ToolTip="Load a saved game.">
+				<local:AutoGreyableImage Source="Bitmaps/Open24.gif" />
+			</Button>
+			<Button ToolTip="Save the current game." IsEnabled="False">
+				<local:AutoGreyableImage Source="Bitmaps/Save24.gif" />
+			</Button>
+			<Separator />
+			<Button ToolTip="View the high scores.">
+				<local:AutoGreyableImage Source="Bitmaps/History24.gif" />
+			</Button>
+			<Separator />
+			<Button ToolTip="Learn how to play the game.">
+				<local:AutoGreyableImage Source="Bitmaps/Help24.gif" />
+			</Button>
+			<Button ToolTip="View the license and copyright information.">
+				<local:AutoGreyableImage Source="Bitmaps/About24.gif" />
+			</Button>
+		</ToolBar>
+	</Grid>
+</Window>
