@@ -10,11 +10,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:FNDice"
 		mc:Ignorable="d" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
-		Title="FNDice" SizeToContent="WidthAndHeight" Icon="/die.ico" ResizeMode="CanMinimize">
+		Title="FNDice" SizeToContent="WidthAndHeight" Icon="/die.ico" ResizeMode="CanMinimize" Loaded="MainWindow_OnLoaded">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
+			<RowDefinition Height="5" />
 			<RowDefinition Height="*" />
+			<RowDefinition Height="5" />
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 		<ToolBar Grid.Row="0" ToolBarTray.IsLocked="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
@@ -39,5 +41,162 @@ SPDX-License-Identifier: Apache-2.0 -->
 				<local:AutoGreyableImage Source="Bitmaps/About24.gif" />
 			</Button>
 		</ToolBar>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="12" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="12" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="5" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="5" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="5" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="5" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid x:Name="m_grdDice" Grid.Column="1" Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" MinWidth="5" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" MinWidth="5" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" MinWidth="5" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" MinWidth="5" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<local:Die Grid.Column="0" />
+				<local:Die Grid.Column="2" />
+				<local:Die Grid.Column="4" />
+				<local:Die Grid.Column="6" />
+				<local:Die Grid.Column="8" />
+			</Grid>
+			<Button x:Name="m_btnRollDice" Grid.Column="1" Grid.Row="2" Click="BtnRollDice_OnClick">Roll Dice</Button>
+			<Grid Grid.Column="1" Grid.Row="4">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="13" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid Grid.Column="0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<RadioButton Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="0">Aces</Label>
+					<TextBox Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="1">Twos</Label>
+					<TextBox Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="2">Threes</Label>
+					<TextBox Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="3">Fours</Label>
+					<TextBox Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="4">Fives</Label>
+					<TextBox Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="5">Sixes</Label>
+					<TextBox Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" GroupName="scores" Visibility="Hidden" />
+					<Label Grid.Column="1" Grid.Row="6">Bonus</Label>
+					<TextBox Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+				</Grid>
+				<Rectangle Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Stroke="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" HorizontalAlignment="Center" Width="3" />
+				<Grid Grid.Column="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<RadioButton Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="0">3 of a Kind</Label>
+					<TextBox Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="1">4 of a Kind</Label>
+					<TextBox Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="2">Full House</Label>
+					<TextBox Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="3">Small Straight</Label>
+					<TextBox Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="4">Large Straight</Label>
+					<TextBox Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="5">FNDice</Label>
+					<TextBox Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+					<RadioButton Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" GroupName="scores" />
+					<Label Grid.Column="1" Grid.Row="6">Chance</Label>
+					<TextBox Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" IsReadOnly="True" TextAlignment="Right" />
+				</Grid>
+			</Grid>
+			<Button Grid.Column="1" Grid.Row="6">End Turn</Button>
+			<Grid Grid.Column="1" Grid.Row="8">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="5" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="5" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Label Grid.Column="0" Grid.Row="0">Upper Total</Label>
+				<Label Grid.Column="2" Grid.Row="0">LowerTotal</Label>
+				<Label Grid.Column="4" Grid.Row="0">Grand Total</Label>
+				<TextBox Grid.Column="0" Grid.Row="1" TextAlignment="Right" />
+				<TextBox Grid.Column="2" Grid.Row="1" TextAlignment="Right" />
+				<TextBox Grid.Column="4" Grid.Row="1" TextAlignment="Right" />
+			</Grid>
+		</Grid>
+		<StatusBar Grid.Row="4">
+			<StatusBar.ItemsPanel>
+				<ItemsPanelTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="5" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="5" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+					</Grid>
+				</ItemsPanelTemplate>
+			</StatusBar.ItemsPanel>
+			<StatusBarItem Grid.Column="0" Content="" />
+			<StatusBarItem Grid.Column="2" Content="" />
+			<StatusBarItem Grid.Column="4" Content="" />
+		</StatusBar>
 	</Grid>
 </Window>
