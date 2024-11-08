@@ -10,7 +10,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:FNDice"
 		mc:Ignorable="d" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
-		Title="FNDice" SizeToContent="WidthAndHeight" Icon="/die.ico">
+		Title="FNDice" SizeToContent="WidthAndHeight" Icon="/die.ico" ResizeMode="CanMinimize">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
