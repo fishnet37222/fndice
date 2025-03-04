@@ -12,5 +12,39 @@ SPDX-License-Identifier: Apache-2.0 -->
 		mc:Ignorable="d" SizeToContent="WidthAndHeight"
 		Title="FNDice" ResizeMode="CanMinimize" Icon="/die.ico" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
 	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="12" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="12" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="5" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="5" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<ToolBar Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" ToolBarTray.IsLocked="True">
+			<Button ToolTip="Start a new game.">
+				<local:AutoGrayableImage Source="Bitmaps/New24.gif" />
+			</Button>
+			<Button ToolTip="Load a saved game.">
+				<local:AutoGrayableImage Source="Bitmaps/Open24.gif" />
+			</Button>
+			<Button IsEnabled="False" ToolTip="Save the current game.">
+				<local:AutoGrayableImage Source="Bitmaps/Save24.gif" />
+			</Button>
+			<Separator />
+			<Button ToolTip="View the high scores.">
+				<local:AutoGrayableImage Source="Bitmaps/History24.gif" />
+			</Button>
+			<Separator />
+			<Button ToolTip="Learn how to play the game.">
+				<local:AutoGrayableImage Source="Bitmaps/Help24.gif" />
+			</Button>
+			<Button ToolTip="View the license and copyright information.">
+				<local:AutoGrayableImage Source="Bitmaps/About24.gif" />
+			</Button>
+		</ToolBar>
 	</Grid>
 </Window>
