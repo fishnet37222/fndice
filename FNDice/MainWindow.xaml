@@ -46,5 +46,23 @@ SPDX-License-Identifier: Apache-2.0 -->
 				<local:AutoGrayableImage Source="Bitmaps/About24.gif" />
 			</Button>
 		</ToolBar>
+		<StatusBar Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4">
+			<StatusBarItem Grid.Column="0" Content="" />
+			<StatusBarItem Grid.Column="2" Content="" />
+			<StatusBarItem Grid.Column="4" Content="" />
+			<StatusBar.ItemsPanel>
+				<ItemsPanelTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="5" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="5" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+					</Grid>
+				</ItemsPanelTemplate>
+			</StatusBar.ItemsPanel>
+		</StatusBar>
 	</Grid>
 </Window>
