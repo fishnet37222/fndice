@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 Copyright (c) 2025 David A. Frischknecht
 
 SPDX-License-Identifier: Apache-2.0 -->
@@ -46,6 +46,40 @@ SPDX-License-Identifier: Apache-2.0 -->
 				<local:AutoGrayableImage Source="Bitmaps/About24.gif" />
 			</Button>
 		</ToolBar>
+		<Grid Grid.Column="1" Grid.Row="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<GroupBox Grid.Row="0" Header="Dice">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" MinWidth="5" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" MinWidth="5" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" MinWidth="5" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" MinWidth="5" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="5" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<local:Die x:Name="m_die1" Grid.Column="0" Grid.Row="0" />
+					<local:Die x:Name="m_die2" Grid.Column="2" Grid.Row="0" />
+					<local:Die x:Name="m_die3" Grid.Column="4" Grid.Row="0" />
+					<local:Die x:Name="m_die4" Grid.Column="6" Grid.Row="0" />
+					<local:Die x:Name="m_die5" Grid.Column="8" Grid.Row="0" />
+					<Button x:Name="m_btnRoll" Grid.Column="0" Grid.ColumnSpan="9" Grid.Row="2" Click="BtnRoll_OnClick">Roll</Button>
+				</Grid>
+			</GroupBox>
+		</Grid>
 		<StatusBar Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4">
 			<StatusBarItem Grid.Column="0" Content="" />
 			<StatusBarItem Grid.Column="2" Content="" />
