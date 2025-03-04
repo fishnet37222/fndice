@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 Copyright (c) 2025 David A. Frischknecht
 
 SPDX-License-Identifier: Apache-2.0 -->
@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:FNDice"
-		mc:Ignorable="d"
-		Title="FNDice" Height="450" Width="800" ResizeMode="CanMinimize" Icon="/die.ico" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+		mc:Ignorable="d" SizeToContent="WidthAndHeight"
+		Title="FNDice" ResizeMode="CanMinimize" Icon="/die.ico" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
 	<Grid>
 	</Grid>
 </Window>
